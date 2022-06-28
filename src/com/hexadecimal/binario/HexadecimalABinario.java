@@ -16,11 +16,16 @@ public class HexadecimalABinario {
             JOptionPane.showMessageDialog(null, "Error campo de texo esta vacio intente nuevamente");
             System.exit(-1);
         }else {
-            System.out.println("\nNumero binario " + getNumeroBinario("a12"));
-            JOptionPane.showMessageDialog(null, "Numero hexadecimal ingresado " +
-                    hexa + "\nNumero binario resultante " + getNumeroBinario(hexa));
+            System.out.println("\nNumero binario " + getNumeroBinario(hexa.toLowerCase()));
+            String salida = getNumeroBinario(hexa.toLowerCase());
+            if (salida.equals("Error el numero hexadecimal es incorrecto")) {
+                JOptionPane.showMessageDialog(null, "Numero hexadecimal ingresado " +
+                        hexa.toUpperCase() + "\n" + salida);
+            }else {
+                JOptionPane.showMessageDialog(null, "Numero hexadecimal ingresado " +
+                        hexa.toUpperCase() + "\nNumero binario resultante " + salida);
+            }
         }
-
 
     }
 }
